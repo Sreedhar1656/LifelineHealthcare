@@ -3,6 +3,7 @@ package com.lancesoft;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,4 +17,9 @@ public class DemoWebResource {
 		return new ResponseEntity<>(" Hyy There! ", HttpStatus.OK);
 	}
 
+	
+	@GetMapping("/kk/{name}")
+	public ResponseEntity<?> getResponse(@PathVariable ("name") String name) {
+		return new ResponseEntity<>(" Hyy "+name, HttpStatus.OK);
+	}
 }
